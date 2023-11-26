@@ -153,6 +153,7 @@ function checkMines(r, c) {
     
     if (tilesClicked == rows * columns - minesAmount) {
         gameOver = true;
+       
         
 
     }
@@ -187,16 +188,41 @@ var resetButton = document.getElementById("reset");
 resetButton.addEventListener("click", resetGame);
 
 function resetGame() {
+    // post results
+    sendResult();
+    // clear board divs
     const boardElement = document.getElementById("board");
     while (boardElement.firstChild) {
         boardElement.removeChild(boardElement.firstChild);
     }
-
+    //reset gamestates
     board = [];
     tilesClicked = 0;
     gameOver = false;
     minesLocation = [];
-
-
+    //start over
     startGame();
+}
+
+
+function sendResult() {
+
+    let score = {
+        "userName": 'ChrisHarting',
+        "tilesClicked": tilesClicked,
+        "time": '123',
+    }
+
+    fetch('script.php', {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(score)
+    }).then(function (response) {
+        return response.text();
+    }).then(function (data) {
+        console.log(data);
+    })
+ 
 }

@@ -90,6 +90,7 @@ function clickTile() {
     let tile = this;
     if (minesLocation.includes(tile.id)) {
         gameOver = true;
+        tile.style.backgroundColor = "red";
         revealMines();
         return;
     }
@@ -178,7 +179,7 @@ function revealMines() {
             let tile = board[r][c];
             if (minesLocation.includes(tile.id)) {
                 tile.innerText = "*";
-                tile.style.backgroundColor = "red";
+                
             }
         }
     }
@@ -206,10 +207,10 @@ function resetGame() {
 
 
 function sendResult() {
-
+    let username = document.getElementById("username").value;
     let score = {
-        "userName": 'ChrisHarting',
-        "tilesClicked": tilesClicked,
+        "username": username,
+        "score": tilesClicked,
         "time": '123',
     }
 

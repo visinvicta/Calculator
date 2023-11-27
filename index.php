@@ -15,16 +15,14 @@
 
 
     <div>
-        <div>
-            <input type="text" id="rows"> </input>
-            <input type="text" id="columns"> </input>
-            <input type="text" id="time"> </input>
-            <button id="reset">Reset</button>
+        <div class="data">
+            <input class="score" type="text" id="time" placeholder="time"> </input>
+            <button class="reset" id="reset"><img src="minesweepersmiley.png" alt="smiley"></button>
+            <input class="score" type="text" id="username" placeholder="username"> </input>
+            
         </div>
         <div>
             <div id="board"></div>
-
-
         </div>
     </div>
 

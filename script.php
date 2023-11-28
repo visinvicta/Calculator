@@ -1,6 +1,7 @@
 <?php
 
-require_once 'Database.php';
+require 'Database.php';
+require 'functions.php';
 
 if(isset($_POST)) {
     $data = file_get_contents("php://input");
@@ -18,10 +19,4 @@ if(isset($_POST)) {
 
     $statement->execute();
 }
-
-// to do:
-
-//display highscores
-
-//different modes? (beginner, expert... )
 

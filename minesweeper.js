@@ -1,18 +1,3 @@
-// to do
-//
-// generate a field of 10x10 tiles
-// fill X amount of tiles with mines randomly
-// 
-// when a tile is clicked:
-// check if its close to other mines and show a number accordingly
-// check if nearby tiles are empty and reveal them
-// if mine -> game over
-//
-// losing condition: click on a mine
-// winning condition: reveal all tiles but the mines
-// flagging system?
-
-
 var board = [];
 var columns = 10;
 var rows = 10;
@@ -27,7 +12,6 @@ window.onload = function () {
     startGame();
 }
 
-
 //fill the field with mines
 function setMines() {
     //randomly select mines
@@ -40,11 +24,10 @@ function setMines() {
         if (!minesLocation.includes(id)) {
             minesLocation.push(id);
             minesLeft -= 1;
-            console.log(id);
+          
         }
     }
-        
-}
+        }
 
 function startGame() {
     setMines();
@@ -62,7 +45,6 @@ function startGame() {
         }
         board.push(row);
     }
-    console.log(board);
 }
 
 //set flag on tile
@@ -214,16 +196,17 @@ function sendResult() {
         "time": '123',
     }
 
-    fetch('script.php', {
-        method: 'POST',
-        headers: {
-            'Content-type': 'application/json'
-        },
-        body: JSON.stringify(score)
-    }).then(function (response) {
-        return response.text();
-    }).then(function (data) {
-        console.log(data);
-    })
- 
+    if (username !== '') {
+        fetch('script.php', {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+            body: JSON.stringify(score)
+        }).then(function (response) {
+            return response.text();
+        }).then(function (data) {
+            console.log(data);
+        })
+    }
 }

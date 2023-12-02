@@ -12,6 +12,10 @@ window.onload = function () {
     startGame();
 }
 
+let setScore = document.getElementById("score");
+setScore.value = tilesClicked;
+
+
 //fill the field with mines
 function setMines() {
     //randomly select mines
@@ -80,7 +84,8 @@ function clickTile() {
     let coordinates = tile.id.split("-");
     let r = parseInt(coordinates[0]);
     let c = parseInt(coordinates[1]);
-    checkMines(r, c);
+    checkMines(r, c)
+    setScore.value = tilesClicked;
 }
 
 //checks how many mines are in the vicinity of the clicked tile
@@ -183,6 +188,7 @@ function resetGame() {
     tilesClicked = 0;
     gameOver = false;
     minesLocation = [];
+    setScore.value = 0;
     //start over
     startGame();
 }

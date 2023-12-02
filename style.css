@@ -7,10 +7,9 @@
 
 }
 
-
-
 body {
-    background-color: gray;
+    background-color: rgb(94, 121, 228)
+    
   }
 
 .data {
@@ -24,7 +23,8 @@ body {
 #board {
     width: 500px;
     height: 500px;
-    border: 2px solid rgb(63, 62, 62);
+    border: 5px solid rgb(63, 62, 62);
+    border-radius: 5px;
     background-color: #c0c0c0;
     margin: 0 auto;
     display: flex;
@@ -87,24 +87,38 @@ body {
     width: 50px;
     height: 50px;
     background-color: gray;
-    border: gray;  
+    border: 3px solid rgb(63, 62, 62);
+    border-radius: 10px;
+    margin: 5px;
+    padding: 1px;
 }
 
 .gamedata {
     background-color: #c0c0c0;
     height: 30px;
-    width: 100px;
+    width: 213px;
     justify-content: center;
     align-items: center;
+    border: 4px solid rgb(63, 62, 62);
+    border-radius: 10px;
+    text-align: center;
 
 }
 
-.scores {
+table {
+    border: 5px solid rgb(63, 62, 62);
+    border-radius: 10px;
+   
+}
+
+td {
     background-color: #c2c2c2;
     height: 30px;
-    width: 100px;
+    width: 200px;
     justify-content: center;
     align-items: center;
+   
+   
 
 }
 
@@ -113,6 +127,7 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    margin: 20px;
     
 }
 

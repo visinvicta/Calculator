@@ -17,9 +17,9 @@
 
     <div>
         <div class="data">
-            <input class="gamedata" type="text" id="time" placeholder="time"> </input>
+            <input class="gamedata" type="text" id="score" placeholder="Score"> </input>
             <button class="reset" id="reset"><img src="minesweepersmiley.png" alt="smiley"></button>
-            <input class="gamedata" type="text" id="username" placeholder="username"> </input>
+            <input class="gamedata" type="text" id="username" placeholder="Username"> </input>
 
         </div>
         <div>
@@ -32,7 +32,7 @@
                 <tr>
                     <th class="tableheader">Player</th>
                     <th class="tableheader">Score</th>
-                    <th class="tableheader">Time</th>
+                  
                 </tr>
             </thead>
             <tbody>
@@ -42,7 +42,6 @@
                     echo "<tr>";
                     echo '<td class="scores">' . $score['Username'] . '</td>';
                     echo '<td class="scores">' . $score['Score'] . '</td>';
-                    echo '<td class="scores">' . $score['Time'] . '</td>';
                     echo "</tr>";
                 }
                 ?>
